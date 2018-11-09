@@ -1,0 +1,41 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
+}
+th{
+    background-color: blue;
+    color: white;
+}
+td{
+    background-color: #fff;
+}
+.button#paginator {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.footer {
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    background-color: rgb(224, 222, 222);
+}
+li{
+    float: left;
+}
+.section{
+    background-color: rgb(224, 222, 222);
+    padding: 5px;
+}

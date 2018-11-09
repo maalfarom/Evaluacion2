@@ -1,0 +1,83 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Venta de Automoviles</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link href="{% static 'js/JQuery.js' %}">
+</head>
+<body>
+    <div class="middle-sm center-sm">
+        <center>
+            <img src="{% static 'img/logo.png' %}" width="30%" height="30%">
+        </center>
+        
+    </div>
+
+    {% if object_list %}
+        {% for auto in object_list %}
+            <div class="section col-sm-12 col-md-5 col-lg-2 col-xs-12 start-lg end-sm center-xs">
+                <table border="1">
+                    <tr class='clickable-row' data-href='url://link-for-first-row/'>
+                        <th>Marca: </th>
+                        <td>{{auto.Marca}}</td>
+                    </tr>
+                    <tr>
+                        <th>Modelo: </th>
+                        <td>{{auto.Modelo}}</td>
+                    </tr>
+                    <tr>
+                        <th>Año: </th>
+                        <td>{{auto.Anio}}</td>
+                    </tr>
+                    <tr>
+                        <th>Color: </th>
+                        <td>{{auto.Color}}</td>
+                    </tr>
+                    <tr>
+                        <th>Numero de Puertas: </th>
+                        <td>{{auto.NumeroPuertas}}</td>
+                    </tr>
+                    <tr>
+                        <th>Precio: </th>
+                        <td>{{auto.Precio}}</td>
+                    </tr>
+                    <tr>
+                        <th>Descripcion: </th>
+                        <td>{{auto.Descripcion}}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de publicación: </th>
+                        <td>{{auto.FechaPublicacion}}</td>
+                    </tr>
+                </table>
+                <br><br>
+            </div>
+        {% endfor %}
+    {% endif %}
+<ul>
+    <li>
+        {% if page_obj.has_previous %}
+        <button class="paginator">
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        </button> 
+        {% endif %}
+    </li>
+    <li>
+        {% if page_obj.has_next %}
+        <button class="paginator">
+            <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+        </button>
+        {% endif %}
+    </li>
+</ul>
+
+<footer class="footer">
+    Desarrollo Web
+</footer>
+</body>
+</html>
